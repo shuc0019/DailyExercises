@@ -1,4 +1,4 @@
-const SERVERURL = "http://localhost:4444/api/cars"
+const SERVERURL = "http://127.0.0.1:5500/car.html"
 const cars = fetch(SERVERURL)
 .then(Response=>{return Response.json()
 }).then(data=>{
