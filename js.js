@@ -65,7 +65,7 @@ function getCar() {
     headers: { "Content-type": "application/json" },
     body: JSON.stringify(newCar)
   }
-  fetch(SERVER_URL, options)
+  fetch(SERVERURL, options)
     .then(res => res.json())
     .then(carRespons => {
       document.getElementById("new-car-response").innerText = JSON.stringify(carRespons, null, 3)
