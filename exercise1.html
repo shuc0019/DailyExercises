@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise 1</title>
+</head>
+<body>
+<h1>Dom Manipulation and Events - Opgave 1 -</h1>
+<div id="d1" style="width: 100px;margin: 1px;">&nbsp;</div>
+<div id="d2" style="width: 100px;margin: 1px;">&nbsp;</div>
+<div id="d3" style="width: 100px;margin: 1px;">&nbsp;</div>
+
+<button id="changeColorButton">Change Colors</button>
+<script>
+    //vælg alle div på siden
+    const divs = document.querySelectorAll("div");
+
+
+    //giv farver til de forskellige div
+    divs[0].style.backgroundColor = "red";
+    divs[1].style.backgroundColor = "blue";
+    divs[2].style.backgroundColor = "green";
+
+    // få en randomfarve
+    function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // funktion til at ændre farven på de forskellige div
+    function changeDivColor(div) {
+        div.style.backgroundColor = getRandomColor();
+    }
+
+    // få knappen til at fungere ved hjælp af event..
+    const changeColorButton = document.getElementById("changeColorButton");
+    changeColorButton.addEventListener("click", function () {
+        for (let i = 0; i < divs.length; i++) {
+            changeDivColor(divs[i]);
+        }
+    });
+
+</script>
+
+
+
+
+
+</body>
+</html>

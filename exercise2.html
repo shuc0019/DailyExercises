@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exercise 2</title>
+  <style>
+    .my-div {width: 25px; height: 25px;background-color:red; margin:1px;}
+  </style>
+
+</head>
+<body>
+<h1>Event Bubbling and event arguments - opgave 2- </h1>
+<div id="outer">
+<div id="nb1"class="my-div"></div>
+<div id="nb2"class="my-div"></div>
+<div id="nb3"class="my-div"></div>
+<div id="nb4"class="my-div"></div>
+<div id="nb5"class="my-div"></div>
+<div id="nb6"class="my-div"></div>
+<div id="nb7"class="my-div"></div>
+<div id="nb8"class="my-div"></div>
+<div id="nb9"class="my-div"></div>
+<div id="nb10"class="my-div"></div>
+<div id="nb11"class="my-div"></div>
+<div id="nb12"class="my-div"></div>
+<script>
+
+    //En Clickhandler til alle divs
+    function clickHandler(event){
+        if (event.target.class.contains("my-div")){
+            const divId = event.target.id;
+            console.log("hi from", divId);
+        }
+    }
+
+    const outer = document.getElementById("outer");
+    outer.addEventListener("click", clickHandler);
+    // eventlistener til hele bodyen
+
+    //document.body.addEventListener("click", clickHandler);
+    /*
+    const nb1 = document.getElementById("nb1");
+    const nb2 = document.getElementById("nb2");
+
+    nb1.addEventListener("click", clickHandler);
+    nb2.addEventListener("click", clickHandler);
+
+     */
+</script>
+</body>
+</html>
