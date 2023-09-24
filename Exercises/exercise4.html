@@ -12,8 +12,23 @@
 <h4 id="car-make"></h4>
 
 <script>
-  const cars = ["Ford", "WW", "Toyota", "Volvo"]; //Assume this was fetched from the backend
-  //TODO
+ 
+const cars = ["Ford", "WW", "Toyota", "Volvo"];
+const selectElement = document.getElementById('car-selector');
+
+cars.forEach(country => {
+  const option = document.createElement('option');
+  option.value = country;
+
+
+  option.textContent = country.toUpperCase();
+  selectElement.appendChild(option);
+});
+
+selectElement.addEventListener('change', (event) => {
+  document.getElementById("car-make").innerText = event.target.value
+});
+
 </script>
 
 
